@@ -1,0 +1,177 @@
+#header { position: fixed; left: 0; top: 0; width: 100%; z-index: 5; background-color: @bodycolor;
+	#logo { float: left; padding: 15px 0 15px 15px; height: 55px;
+		h1 { margin-bottom: 0;
+			img { height: 55px; }
+		}
+	}
+	nav { position: absolute; right: 15px; top: 0; display: block;
+		&:before, &:after { content: ''; display: block; position: absolute; top: 22px; height: 41px; border-left: 1px dotted @lightgrey; }
+		&:before { left: -10px; }
+		&:after { left: -12px; }
+		ul { margin-bottom: 0;
+			li { display: inline-block;
+				a { display: inline-block; .font-size(14); line-height: 85px; padding: 0 11px;
+					&:hover { .background-alpha(@black, .06, @lightergrey); }
+				}
+				&.arrow > a:after { float: none; }
+				ul { visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 14; margin-top: 0; padding-top: 5px; text-align: left; min-width: 150px; height: auto; cursor: pointer;
+					li { display: block; width: 100%; .background-alpha(#f2f2f2, .95, #f2f2f2); border-bottom: 1px solid darken(#f2f2f2, 10%);
+						a { display: block; .font-size(14); line-height: 35px;
+							&:hover { .background-alpha(@black, .06, @lightergrey); }
+						}
+						&:last-child { border: 0; }
+						&.arrow > a:after { float: right; }
+						&:hover, &.hover {
+							& > a { .background-alpha(@black, .06, @lightergrey); }
+						}
+					}
+					ul { top: 0; left: 99%; margin-top: 0; padding-top: 0; }
+				}
+				&:hover, &.hover { position: relative; z-index: 15; cursor: default;
+					& > a { .background-alpha(@black, .06, @lightergrey); }
+				}
+				&:hover > ul, &.hover > ul { display: block; visibility: visible; }
+			}
+		}
+	}
+	#menu-switch { display: none; }
+}
+.fullpage #header { .background-alpha(@bodycolor, .95, @bodycolor);
+	nav ul li ul li { .background-alpha(@bodycolor, .95, @bodycolor); border-bottom-color: @bordercolor; }
+}
+.ie7 {
+	#header nav ul li { display: inline; }
+	#header nav ul li ul { width: 150px; }
+}
+
+#main, #footer {
+	.wrapper { padding: 20px; }
+}
+#main { margin-top: 85px; }
+
+#supersized-info, #okvideo-info, .flexslider .slides .info, .iosSlider .info { z-index: 1; left: 30px; bottom: 30px; width: 380px; .background-alpha(@bodycolor, .95, @bodycolor);
+	.inner { padding: 0 0 0 16px; margin: 20px; border-left: 1px dotted @lightgrey;
+		&:after { content: ' '; display: block; position: absolute; top: 0; left: 1px; height: 100%; border-left: 1px dotted @lightgrey; }
+		h2, p { padding: 0; text-align: left; }
+		h2 { text-transform: uppercase;
+			a { display: inline; }
+		}
+		p { padding-top: 8px; .font-size(15); }
+	}
+}
+#supersized-info {
+	a.supersized-next, a.supersized-prev { right: -73px; margin-top: 0; .background-alpha(@bodycolor, .95, @bodycolor); width: 48px; }
+	a.supersized-next { top: -20px;
+		span { margin-left: 16px; }
+	}
+	a.supersized-prev { top: auto; left: auto; bottom: -20px;
+		span { margin-left: 14px; }
+	}
+}
+
+.flex-direction-nav a { top: 50%; bottom: auto; margin-top: -24px; }
+
+#audioplayer { top: auto; bottom: 30px; left: 30px; width: 380px; margin-left: 0; }
+
+/* thumb */
+.thumb {
+	&.round, &.round a.image-link, &.round img, &.round a.image-link:before { .rounded(100%); }
+	a.image-link:before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: @textcolor; .opacity(0); .transition(all 200ms linear); }
+	a.image-link:hover:before { .opacity(0.2); }
+	.info { text-align: center; }
+}
+
+/* features boxes */
+.features-boxes { display: table;
+	.box { display: table-cell; width: 33.33%;
+		.inner { border-bottom: 0; border-right: 1px dotted darken(@bordercolor, 20%); }
+	}
+	.last {
+		.inner { border-right: 0; }
+	}
+}
+.ie7 .features-boxes { display: block;
+	.box { float: left; }
+}
+
+h1 { .font-size(33); }
+h2 { .font-size(29); }
+h3 { .font-size(25); }
+h4 { .font-size(21); }
+h5 { .font-size(17); }
+
+.page-title.left { float: left; margin-bottom: 0.75em; }
+.subtitle { float: right; text-transform: uppercase;
+	p { margin-bottom: 0.75em; line-height: 3.3; }
+}
+
+.post {
+	h3 { position: relative; top: -1px; }
+	.date { float: left; width: 77px; margin-right: 17px; position: relative; top: 2px;
+		strong { .font-size(51); color: @textcolor; }
+		em { .font-size(25); position: absolute; left: 43px; top: -6px; }
+		span { position: absolute; left: 43px; bottom: 0px; }
+		&:before, &:after { content: ''; display: block; position: absolute; top: -2px; height: 37px; border-left: 1px dotted @lightgrey; }
+		&:before { right: -5px; }
+		&:after { right: -7px; }
+	}
+	.meta {
+		p { float: left; width: 30%; margin-right: 3%; line-height: 1.5em;
+			span { display: block;
+				&:before { top: 0; }
+			}
+		}
+	}
+}
+.ie7 .post .date { height: 38px;
+	strong { position: relative; top: -9px; line-height: 44px; }
+}
+
+.commentlist {
+	.comment {
+		.comment-body { position: relative; margin-left: 95px; }
+		h6 { padding-right: 100px; }
+		p { margin-top: 0; }
+		p.date { position: absolute; top: 0; right: 0; }
+		.children { margin-left: 95px; }
+	}
+}
+
+.pagination .button { margin-bottom: 0; }
+
+#footer {
+	.rotator {
+		.prev, .next { top: -50px; }
+		.next { left: 125px; }
+		.prev { left: 98px; }
+	}
+	#top-link { float: right; }
+}
+.ie7 #footer #top-link { float: none; }
+
+table { 
+	th, td { padding: 6px 8px; .font-size(15); }
+}
+
+/* grid */
+@max_columns: 12;
+@gutter_pc: 2%;
+.mixin-grid(@num, @gutter_pc, @max_columns) {
+    @one_col: (100% - (@gutter_pc * (@max_columns - 1))) / @max_columns;
+    width: (@one_col * @num) + (@gutter_pc * (@num - 1));
+    margin-left: @gutter_pc;
+}
+.col { float: left; margin-left: @gutter_pc; }
+.grid1 { .mixin-grid(1, @gutter_pc, @max_columns); }
+.grid2 { .mixin-grid(2, @gutter_pc, @max_columns); }
+.grid3 { .mixin-grid(3, @gutter_pc, @max_columns); }
+.grid4 { .mixin-grid(4, @gutter_pc, @max_columns); }
+.grid5 { .mixin-grid(5, @gutter_pc, @max_columns); }
+.grid6 { .mixin-grid(6, @gutter_pc, @max_columns); }
+.grid7 { .mixin-grid(7, @gutter_pc, @max_columns); }
+.grid8 { .mixin-grid(8, @gutter_pc, @max_columns); }
+.grid9 { .mixin-grid(9, @gutter_pc, @max_columns); }
+.grid10 { .mixin-grid(10, @gutter_pc, @max_columns); }
+.grid11 { .mixin-grid(11, @gutter_pc, @max_columns); }
+.grid12 { margin-left: 0; width: 100%; }
+.alpha { margin-left: 0; }

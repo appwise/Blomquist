@@ -1,0 +1,83 @@
+/* panzer - general */
+.panzerlist { width: 300px; display: block; -webkit-touch-callout: none; .user-select(none); background: @white; }
+div.panzerlist-expand { width: 100%; }
+.panzerlist .player { position: relative; padding: 3px; height: 28px; text-align: left; }
+.panzerlist-unsupported .player { height: auto; }
+.panzerlist .controls { float: left; width: 74px; height: 28px; overflow: hidden; }
+.hide-prev-next .player .controls { width: 28px; }
+.panzerlist .controls span, .panzerlist .controls a { float: left; width: 28px; height: 28px; background-position: 0 0; cursor: pointer; }
+.panzerlist .controls span:hover, .panzerlist .controls span.hover, .panzerlist .controls a:hover { background-position: -28px 0; }
+.panzerlist .controls span:active, .panzerlist .controls span.active, .panzerlist .controls a:active { background-position: -56px 0; }
+.panzerlist .controls em { display: block; }
+.panzerlist .controls .play em { width: 9px; height: 12px; margin-top: 9px; margin-left: 11px; background-position: -85px -1px; }
+.panzerlist .controls .pause em { width: 9px; height: 11px; margin-top: 9px; margin-left: 10px; background-position: -94px -1px; }
+.panzerlist .controls .prev-next { float: left; margin-top: 3px; margin-left: 2px; width: 43px; height: 23px; }
+.panzerlist .controls .prev-next span { float: left; width: 21px; height: 22px; }
+.panzerlist .controls .prev-next span.prev { background-position: 0 -102px; }
+.panzerlist .controls .prev-next span.prev:hover { background-position: -43px -102px; }
+.panzerlist .controls .prev-next span.prev:active { background-position: -86px -102px; }
+.panzerlist .controls .prev-next span.next { width: 22px; background-position: -21px -102px; }
+.panzerlist .controls .prev-next span.next:hover { background-position: -64px -102px; }
+.panzerlist .controls .prev-next span.next:active { background-position: -107px -102px; }
+.panzerlist strong.alert { font: 13px/18px @basefont; font-weight: normal; display: block; padding: 0 4px; text-align: left; }
+.panzerlist .progress-wrapper { position: absolute; height: 11px; left: 77px; top: 12px; right: 104px; }
+.hide-prev-next .progress-wrapper { left: 33px; }
+.panzerlist .volume-wrapper { position: absolute; width: 70px; height: 11px; top: 12px; right: 3px; }
+.panzerlist span.duration { position: absolute; top: 0; right: 74px; font: 10px/35px @basefont; cursor: default; }
+.panzerlist span.small { font-size: 9px; }
+.panzerlist .progress, .panzerlist .volume { position: relative; margin: 0 5px; height: 11px; background-position: 0 -79px; z-index: 1; }
+.panzerlist .volume { float: right; width: 40px; }
+.panzerlist .volume-wrapper span { float: left; position: relative; top: -3px; left: 1px; width: 17px; height: 15px; background-position: -136px 0px; }
+.panzerlist .progress:before, .panzerlist .progress:after, .panzerlist .volume:before, .panzerlist .volume:after { position: absolute; top: 0; content: ''; width: 5px; height: 11px; z-index: 1; }
+.panzerlist .progress:before, .panzerlist .volume:before { left: -5px; background-position: -112px -1px; }
+.panzerlist .progress:after, .panzerlist .volume:after { right: -5px; background-position: -119px -1px; }
+.panzerlist .progress .elapsed, .panzerlist .volume .set { position: relative; height: 10px; background-position: 0 -90px; z-index: 2; }
+.panzerlist .progress .elapsed:before, .panzerlist .progress .elapsed:after, .panzerlist .volume .set:before, .panzerlist .volume .set:after { position: absolute; top: 0; content: ''; width: 6px; height: 10px; }
+.panzerlist .progress .elapsed:before, .panzerlist .volume .set:before { left: -5px; background-position: -124px -1px; }
+.panzerlist .progress .elapsed:after, .panzerlist .volume .set:after { right: -5px; background-position: -130px -1px; }
+.panzerlist .cover { position: relative; }
+.panzerlist .cover:after { content: ""; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; -webkit-background-origin: border-box; -moz-background-origin: border; background-origin: border-box; background: -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0.05)), color-stop(0.5, rgba(255, 255, 255, .07)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))); background: -moz-linear-gradient(left top, rgba(255, 255, 255, .05), rgba(255, 255, 255, .07) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)); background: -o-linear-gradient(left top, rgba(255, 255, 255, .05), rgba(255, 255, 255, .07) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)); background: linear-gradient(left top, rgba(255, 255, 255, .05), rgba(255, 255, 255, .07) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)); }
+.panzerlist-expand .cover:after { display: none; }
+.panzerlist .cover img { display: block; margin: 0 auto; border: 0; max-width: 100%; height: auto; }
+.panzerlist .title { padding: 4px; text-align: center; font: 12px/20px @basefont; cursor: default; }
+.panzerlist .list { text-align: left; cursor: default; }
+.hide-list .list { display: none; }
+.panzerlist .list a { padding: 4px 6px; display: block; font: 14px/20px @basefont; font-weight: normal; text-decoration: none; outline: 0; border: 0; }
+
+/* panzer - player big */
+.panzerlist-big .player { padding: 0 5px 5px; height: 74px; }
+.panzerlist-unsupported .player { height: auto; }
+.panzerlist-big .controls { width: 127px; height: 49px; margin-top: 25px; overflow: hidden; }
+.panzerlist-big.hide-prev-next .player .controls { width: 49px; }
+.panzerlist-big .controls span, .panzerlist-big .controls a { width: 49px; height: 49px; background-position: 0 -29px; margin: 0; padding: 0; border: 0; }
+.panzerlist-big .controls span:hover, .panzerlist-big .controls span.hover, .panzerlist-big .controls a:hover { background-position: -49px -29px; }
+.panzerlist-big .controls span:active, .panzerlist-big .controls span.active, .panzerlist-big .controls a:active { background-position: -98px -29px; }
+.panzerlist-big .controls .play em { width: 15px; height: 18px; margin-top: 15px; margin-left: 19px; background-position: -148px -33px; }
+.panzerlist-big .controls .pause em { width: 15px; height: 19px; margin-top: 15px; margin-left: 17px; background-position: -148px -53px; }
+.panzerlist-big .controls .prev-next { margin-top: 7px; margin-left: 4px; width: 73px; height: 35px; }
+.panzerlist-big .controls .prev-next span { float: left; width: 35px; height: 34px; }
+.panzerlist-big .controls .prev-next span.prev { margin-left: 1px; background-position: -1px -126px; }
+.panzerlist-big .controls .prev-next span.prev:hover { background-position: -73px -126px; }
+.panzerlist-big .controls .prev-next span.prev:active { background-position: -145px -126px; }
+.panzerlist-big .controls .prev-next span.next { width: 36px; background-position: -36px -126px; }
+.panzerlist-big .controls .prev-next span.next:hover { background-position: -108px -126px; }
+.panzerlist-big .controls .prev-next span.next:active { background-position: -180px -126px; }
+.panzerlist-big strong.alert { font-size: 15px; }
+.panzerlist-big .progress-wrapper { left: 6px; top: 6px; right: 6px; }
+.panzerlist-big span.duration { top: 25px; right: 110px; font-size: 12px; line-height: 57px; }
+.panzerlist-big span.small { font-size: 11px; line-height: 58px; }
+.panzerlist-big .volume-wrapper { top: 48px; right: 6px; width: 102px; }
+.panzerlist-big .volume-wrapper .volume { width: 70px; }
+.panzerlist-big .title { padding: 6px; font-size: 14px; }
+.panzerlist-big .list a { padding: 6px 9px; font-size: 15px; line-height: 22px; }
+
+/* panzer - custom theme */
+.panzerlist-custom .controls span, .panzerlist-custom .controls a, .panzerlist-custom .controls em, .panzerlist-custom .progress, .panzerlist-custom .progress:before, .panzerlist-custom .progress:after, .panzerlist-custom .elapsed, .panzerlist-custom .elapsed:before, .panzerlist-custom .elapsed:after, .panzerlist-custom .volume, .panzerlist-custom .volume-wrapper span, .panzerlist-custom .volume:before, .panzerlist-custom .volume:after, .panzerlist-custom .volume .set, .panzerlist-custom .volume .set:before, .panzerlist-custom .volume .set:after { background-image: url('@{images-url}panzerlist-sprite-custom.png'); }
+.panzerlist-custom .list a { color: @grey; }
+.panzerlist-custom .list a:hover { color: @black; .background-alpha(@black, .08, @lightergrey); }
+.panzerlist-custom .list a.active { color: @bodycolor; background-color: @textcolor; }
+.panzerlist-custom strong.alert { padding: 5px 10px 10px; }
+
+@media only screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+	.panzerlist-custom .controls span, .panzerlist-custom .controls a, .panzerlist-custom .controls em, .panzerlist-custom .progress, .panzerlist-custom .progress:before, .panzerlist-custom .progress:after, .panzerlist-custom .elapsed, .panzerlist-custom .elapsed:before, .panzerlist-custom .elapsed:after, .panzerlist-custom .volume, .panzerlist-custom .volume-wrapper span, .panzerlist-custom .volume:before, .panzerlist-custom .volume:after, .panzerlist-custom .volume .set, .panzerlist-custom .volume .set:before, .panzerlist-custom .volume .set:after { background-image: url('@{images-url}panzerlist-sprite-custom2.png'); background-size: 217px 161px; }
+}

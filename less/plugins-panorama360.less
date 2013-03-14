@@ -1,0 +1,31 @@
+/* panorama layout */
+.panorama { position: absolute; z-index: 0; left: 0; top: 0; width: 100%; height: 100%;
+	.panorama-view { width: 100%; height: 100%; overflow: hidden; cursor: url("@{images-url}openhand.cur"),default; }
+	.grab { cursor: url("@{images-url}closedhand.cur"),default; }
+	.panorama-container { position: relative;
+		img { height: 100%; position: absolute; top: 0; .user-select(none); }
+	}
+	.info, .area { position: absolute; display: block; }
+	.info { right: 10px; bottom: 10px; }
+	.controls { position: absolute; left: 10px; bottom: 10px;
+		a { display: block; float: left; margin-right: 5px;
+			span { display: block; .hide-text(); background: url("@{images-url}panorama-controls.png") no-repeat -999px 0; }
+		}
+	}
+	.controls a.prev span, .controls a.next span { width: 10px; height: 14px; }
+	.controls a.prev span { background-position: 0 0; }
+	.controls a.next span { background-position: -11px 0; }
+	.controls a.stop span { margin: 2px 1px; width: 10px; height: 10px; background-position: -22px -2px; }
+	.info, .controls a { .opacity(0.6); background-color: #000; color: #fff; font: bold 11px/14px Arial, sans-serif; text-decoration: none; padding: 6px 7px; cursor: pointer; .rounded(5px); .transition(all .25s linear);
+		&:hover { .opacity(0.8); }
+	}
+	.panorama-view .area { .opacity(0.4); background-color: #fff; cursor: pointer; .rounded(100%); .hide-text();
+		&:hover { .opacity(0.6); }
+	}
+	.preloader { position: absolute; top: 50%; left: 50%; z-index: 0; width: 40px; height: 40px; margin: -20px 0 0 -20px; text-indent: -999em; background: #fff url('@{images-url}loading.gif') no-repeat center center; .rounded(3px); }
+}
+
+@media only screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+	.panorama .controls a.prev span, .panorama .controls a.stop span, .panorama .controls a.next span { background-image: url("@{images-url}panorama-controls2.png"); -webkit-background-size: 32px 14px; background-size: 32px 14px; }
+	.panorama .preloader { background-image: url("@{images-url}loading2.gif"); .background-size(26px 26px); }
+}

@@ -1,0 +1,68 @@
+
+@images-url: "../images/";
+@fonts-url: "../fonts/";
+
+@black 			: rgb(0,0,0);
+@darkgrey 		: lighten(@black, 25%);
+@grey 			: lighten(@black, 50%);
+@lightgrey 		: lighten(@black, 75%);
+@lightergrey 	: lighten(@black, 90%);
+@white 			: rgb(255,255,255);
+
+@bodycolor		: @white;
+@textcolor		: #111;
+@basecolor		: #37E4F5;
+@bordercolor	: @lightergrey;
+
+@basefont : "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@basefontsize : 16;
+@baselineheight : 1.5em;
+@baseheadingfont : inherit;
+@baseheadingfontweight : bold;
+@baseheadingfontcolor : inherit;
+
+@baseline : @baselineheight;
+@gutterwidth : 24px;
+
+@altfont : Cambria, Georgia, Times, "Times New Roman";
+@altlineheight : 1.35em;
+
+@codefont : Monaco, Courier New, monospace;
+
+/* links */
+@linkcolor 		   : @basecolor;
+@linkcolorhover 	: darken(@linkcolor, 10);
+@linkcolorvisited : darken(@linkcolorhover, 10);
+@linkcolorfocus 	: darken(@linkcolorvisited, 10);
+
+// buttons
+@buttonbackground 	: @basecolor;
+@buttonborder 			: 0;
+@buttoncolor 			: @white;
+
+// tables 
+@tablebackground 	: @white;
+@tablestripe 		: darken(@white, 2%);
+@tablehover 		: darken(@white, 7%);
+@tableborder 		: darken(@white, 15%);
+@tableborderwidth	: 1px;
+@tableborderstyle	: solid;
+@tableheaderbackground 	: @basecolor;
+@tableheaderforeground	: @white;
+
+// forms 
+@inputbackground 	: @white; 
+@inputtext 			: @black; 
+@inputborder 		: @lightgrey;
+@inputborderwidth	: 1px;
+@inputborderstyle	: solid;
+@inputhover 		: lighten(@basecolor, 30%);
+@inputfocus 		: @basecolor;
+@inputinvalid 		: #e55;
+@placeholder 		: #ccc;
+
+// alerts
+@alertinfo		 	: #f1f1f1;
+@alertsuccess	 	: #dbfac9;
+@alertnotice	 	: #fff8be;
+@alerterror		 	: #ffc7b9;
